@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "32430587634",
+    "project_id": "uhackapp-84d1b",
+    "storage_bucket": "uhackapp-84d1b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:32430587634:android:24966441d147abd5c99a6b",
+        "android_client_info": {
+          "package_name": "com.example.uhack_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPpWdo4hrBzxWjye2sn-tGuIrPqSHxPxs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
