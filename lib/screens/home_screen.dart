@@ -18,7 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: MaterialButton(
           onPressed: () async {
             final _call = 'tel:$_phoneNumber';
-            // final _text = 'sms:$_phoneNumber';
+            // final _text = 'sms:$_phoneNumberr';
             if (await canLaunch(_call)) {
               await launch(_call);
             }
