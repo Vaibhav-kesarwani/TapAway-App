@@ -45,6 +45,8 @@ dependencies:
   pinput: ^3.0.1
   image_picker: ^1.0.4
   url_launcher: ^6.1.14
+  flutter_phone_direct_caller: ^2.1.1
+  telephony: ^0.2.0
 
 dev_dependencies:
   flutter_test:
