@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:telephony/telephony.dart';
@@ -106,8 +107,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         BorderRadius.circular(100), // Make it a circle
                     onLongPress: () {
                       // Handle tap here if needed
-                      // FlutterPhoneDirectCaller.callNumber('6391028565');
-                      _getUserLocationAndSendSms("6391028565");
+                      FlutterPhoneDirectCaller.callNumber('7784050116');
+                      _getUserLocationAndSendSms("7784050116");
+                      _getUserLocationAndSendSms("7905127971");
+                      _getUserLocationAndSendSms("7985668749");
+                      _getUserLocationAndSendSms("8896067454");
+                      _getUserLocationAndSendSms("6392127437");
                     },
                     child: const Center(
                       child: Text(
