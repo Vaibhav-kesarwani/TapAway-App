@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:telephony/telephony.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -11,6 +12,21 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final Telephony telephony = Telephony.instance;
+
+  @override
+  void initState() {
+    super.initState();
+    _requestPermission();
+  }
+
+  Future<void> _requestPermission() async {
+    final PermissionStatus status =
+        await Permission.locationWhenInUse.request();
+
+    if (status.isGranted) {
+      // Permission granted, you can now access the location.
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -66,17 +82,6 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Column(
         children: [
           GestureDetector(
-            onDoubleTap: () {
-              FlutterPhoneDirectCaller.callNumber('6391028565');
-              telephony.sendSms(
-                to: "6391028565",
-                message: "May the force be with you!",
-              );
-              telephony.sendSms(
-                to: "6393599881",
-                message: "May the force be with you!",
-              );
-            },
             child: Center(
               child: Container(
                 margin: const EdgeInsets.all(90),
@@ -93,14 +98,27 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                   color: Colors.redAccent,
                 ),
-                child: const Center(
-                  child: Text(
-                    "SOS",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 60,
-                      fontWeight: FontWeight.bold,
+                child: Material(
+                  color: Colors
+                      .transparent, // Set the background color to transparent
+                  child: InkWell(
+                    borderRadius:
+                        BorderRadius.circular(100), // Make it a circle
+                    onLongPress: () {
+                      // Handle tap here if needed
+                      // FlutterPhoneDirectCaller.callNumber('6391028565');
+                      _getUserLocationAndSendSms("6391028565");
+                    },
+                    child: const Center(
+                      child: Text(
+                        "SOS",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 60,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
                   ),
                 ),
@@ -236,5 +254,30 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
     );
+  }
+
+  Future<void> _getUserLocationAndSendSms(String phoneNumber) async {
+    try {
+      final Position position = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.best,
+      );
+
+      // Access the user's latitude and longitude
+      final double latitude = position.latitude;
+      final double longitude = position.longitude;
+
+      // Compose the location message
+      final String locationMessage =
+          'Hello,\nhttps://www.google.com/maps/search/?api=1&query=$latitude,$longitude';
+
+      // Send the location via SMS
+      telephony.sendSms(
+        to: phoneNumber,
+        message: locationMessage,
+      );
+    } catch (e) {
+      // Handle any errors that may occur while fetching the location or sending the SMS.
+      print("Error sending SMS: $e");
+    }
   }
 }

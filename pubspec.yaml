@@ -47,6 +47,8 @@ dependencies:
   url_launcher: ^6.1.14
   flutter_phone_direct_caller: ^2.1.1
   telephony: ^0.2.0
+  geolocator: ^10.1.0
+  permission_handler: ^11.0.1
 
 dev_dependencies:
   flutter_test:
