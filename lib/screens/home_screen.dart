@@ -3,6 +3,10 @@ import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:telephony/telephony.dart';
+import 'package:uhack_app/screens/dos_and_donts_screen.dart';
+import 'package:uhack_app/screens/emergency_contacts_screen.dart';
+import 'package:uhack_app/screens/map_screen.dart';
+import 'package:uhack_app/screens/safety_tips_screen.dart';
 import 'package:uhack_app/screens/weather_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -141,7 +145,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   Navigator.pushAndRemoveUntil(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const WeatherScreen()),
+                      builder: (context) => const WeatherScreen(),
+                    ),
                     (route) => false,
                   );
                 },
@@ -183,77 +188,97 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               const SizedBox(width: 20),
-              Container(
-                width: 100,
-                height: 100,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.purple.shade300,
-                  boxShadow: const [
-                    BoxShadow(
-                      blurRadius: 2,
-                      offset: Offset(2, 2),
-                    ),
-                  ],
-                ),
-                child: const Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Center(
-                      child: Icon(
-                        Icons.call_rounded,
-                        color: Colors.white,
-                        size: 40,
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const EmergencyContactScreen(),
                       ),
-                    ),
-                    SizedBox(height: 5),
-                    Text(
-                      "Emergency \nContacts",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w900,
+                      (route) => false);
+                },
+                child: Container(
+                  width: 100,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.purple.shade300,
+                    boxShadow: const [
+                      BoxShadow(
+                        blurRadius: 2,
+                        offset: Offset(2, 2),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
+                  child: const Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Center(
+                        child: Icon(
+                          Icons.call_rounded,
+                          color: Colors.white,
+                          size: 40,
+                        ),
+                      ),
+                      SizedBox(height: 5),
+                      Text(
+                        "Emergency \nContacts",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w900,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               const SizedBox(width: 20),
-              Container(
-                width: 100,
-                height: 100,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.purple.shade300,
-                  boxShadow: const [
-                    BoxShadow(
-                      blurRadius: 2,
-                      offset: Offset(2, 2),
-                    ),
-                  ],
-                ),
-                child: const Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Center(
-                      child: Icon(
-                        Icons.location_on_sharp,
-                        color: Colors.white,
-                        size: 40,
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const MapScreen(),
                       ),
-                    ),
-                    SizedBox(height: 10),
-                    Text(
-                      "Map",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w900,
+                      (route) => false);
+                },
+                child: Container(
+                  width: 100,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.purple.shade300,
+                    boxShadow: const [
+                      BoxShadow(
+                        blurRadius: 2,
+                        offset: Offset(2, 2),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
+                  child: const Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Center(
+                        child: Icon(
+                          Icons.location_on_sharp,
+                          color: Colors.white,
+                          size: 40,
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      Text(
+                        "Map",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w900,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],
@@ -262,77 +287,97 @@ class _HomeScreenState extends State<HomeScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                width: 100,
-                height: 100,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.purple.shade300,
-                  boxShadow: const [
-                    BoxShadow(
-                      blurRadius: 2,
-                      offset: Offset(2, 2),
-                    ),
-                  ],
-                ),
-                child: const Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Center(
-                      child: Icon(
-                        Icons.shield_sharp,
-                        color: Colors.white,
-                        size: 40,
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SafetyTipsScreen(),
                       ),
-                    ),
-                    SizedBox(height: 5),
-                    Text(
-                      "Safety \nTips",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w900,
+                      (route) => false);
+                },
+                child: Container(
+                  width: 100,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.purple.shade300,
+                    boxShadow: const [
+                      BoxShadow(
+                        blurRadius: 2,
+                        offset: Offset(2, 2),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
+                  child: const Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Center(
+                        child: Icon(
+                          Icons.shield_sharp,
+                          color: Colors.white,
+                          size: 40,
+                        ),
+                      ),
+                      SizedBox(height: 5),
+                      Text(
+                        "Safety \nTips",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w900,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               const SizedBox(width: 20),
-              Container(
-                width: 100,
-                height: 100,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.purple.shade300,
-                  boxShadow: const [
-                    BoxShadow(
-                      blurRadius: 2,
-                      offset: Offset(2, 2),
-                    ),
-                  ],
-                ),
-                child: const Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Center(
-                      child: Icon(
-                        Icons.library_books_rounded,
-                        color: Colors.white,
-                        size: 40,
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const DosAndDontsScreen(),
                       ),
-                    ),
-                    SizedBox(height: 10),
-                    Text(
-                      "Do's and \nDon't",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w900,
+                      (route) => false);
+                },
+                child: Container(
+                  width: 100,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.purple.shade300,
+                    boxShadow: const [
+                      BoxShadow(
+                        blurRadius: 2,
+                        offset: Offset(2, 2),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
+                  child: const Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Center(
+                        child: Icon(
+                          Icons.library_books_rounded,
+                          color: Colors.white,
+                          size: 40,
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      Text(
+                        "Do's and \nDon't",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w900,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               const SizedBox(width: 20),

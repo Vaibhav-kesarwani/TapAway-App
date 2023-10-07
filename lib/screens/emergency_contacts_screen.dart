@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:uhack_app/screens/home_screen.dart';
 
-class WeatherScreen extends StatefulWidget {
-  const WeatherScreen({super.key});
+class EmergencyContactScreen extends StatefulWidget {
+  const EmergencyContactScreen({super.key});
 
   @override
-  State<WeatherScreen> createState() => _WeatherScreenState();
+  State<EmergencyContactScreen> createState() => _EmergencyContactScreenState();
 }
 
-class _WeatherScreenState extends State<WeatherScreen> {
+class _EmergencyContactScreenState extends State<EmergencyContactScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
