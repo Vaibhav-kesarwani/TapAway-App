@@ -108,10 +108,8 @@ class AuthProvider extends ChangeNotifier {
     DocumentSnapshot snapshot =
         await _firebaseFireStore.collection("users").doc(_uid).get();
     if (snapshot.exists) {
-      print("USER EXISTS");
       return true;
     } else {
-      print("NEW USER");
       return false;
     }
   }
