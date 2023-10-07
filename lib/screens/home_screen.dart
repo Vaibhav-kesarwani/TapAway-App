@@ -3,6 +3,7 @@ import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:telephony/telephony.dart';
+import 'package:uhack_app/screens/weather_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -136,7 +137,14 @@ class _HomeScreenState extends State<HomeScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const WeatherScreen()),
+                    (route) => false,
+                  );
+                },
                 child: Container(
                   width: 100,
                   height: 100,
@@ -370,7 +378,6 @@ class _HomeScreenState extends State<HomeScreen> {
       );
     } catch (e) {
       // Handle any errors that may occur while fetching the location or sending the SMS.
-      print("Error sending SMS: $e");
     }
   }
 }
