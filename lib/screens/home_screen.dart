@@ -34,16 +34,17 @@ class _HomeScreenState extends State<HomeScreen> {
     final GlobalKey<ScaffoldState> drawerscaffoldkey =
         GlobalKey<ScaffoldState>();
     return Scaffold(
+      // backgroundColor: const Color.fromARGB(255, 67, 42, 42),
       appBar: AppBar(
-        toolbarHeight: 80,
-        shadowColor: Colors.green.shade600,
+        toolbarHeight: 90,
+        shadowColor: Colors.white,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(30),
             bottomRight: Radius.circular(30),
           ),
         ),
-        backgroundColor: Colors.purple.shade300,
+        backgroundColor: Colors.purple,
         centerTitle: true,
         title: const Text(
           "My App",
@@ -92,12 +93,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   shape: BoxShape.circle,
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.green,
+                      // color: Colors.white,
                       blurRadius: 2,
-                      offset: Offset(0, 3),
+                      offset: Offset(3, 3),
                     ),
                   ],
-                  color: Colors.redAccent,
+                  color: Color.fromARGB(255, 255, 1, 1),
                 ),
                 child: Material(
                   color: Colors
@@ -134,17 +135,56 @@ class _HomeScreenState extends State<HomeScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              GestureDetector(
+                onTap: () {},
+                child: Container(
+                  width: 100,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.purple.shade300,
+                    boxShadow: const [
+                      BoxShadow(
+                        blurRadius: 2,
+                        offset: Offset(2, 2),
+                      ),
+                    ],
+                  ),
+                  child: const Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Center(
+                        child: Icon(
+                          Icons.wb_cloudy_rounded,
+                          color: Colors.white,
+                          size: 40,
+                        ),
+                      ),
+                      SizedBox(height: 5),
+                      Text(
+                        "Live \nWeather",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w900,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(width: 20),
               Container(
                 width: 100,
                 height: 100,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  color: Colors.purple.shade100,
+                  color: Colors.purple.shade300,
                   boxShadow: const [
                     BoxShadow(
-                      color: Colors.green,
                       blurRadius: 2,
-                      offset: Offset(0, 3),
+                      offset: Offset(2, 2),
                     ),
                   ],
                 ),
@@ -153,50 +193,57 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     Center(
                       child: Icon(
-                        Icons.cloud_rounded,
+                        Icons.call_rounded,
+                        color: Colors.white,
+                        size: 40,
+                      ),
+                    ),
+                    SizedBox(height: 5),
+                    Text(
+                      "Emergency \nContacts",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w900,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(width: 20),
+              Container(
+                width: 100,
+                height: 100,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.purple.shade300,
+                  boxShadow: const [
+                    BoxShadow(
+                      blurRadius: 2,
+                      offset: Offset(2, 2),
+                    ),
+                  ],
+                ),
+                child: const Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Center(
+                      child: Icon(
+                        Icons.location_on_sharp,
                         color: Colors.white,
                         size: 40,
                       ),
                     ),
                     SizedBox(height: 10),
                     Text(
-                      "Live Weather",
+                      "Map",
+                      textAlign: TextAlign.center,
                       style: TextStyle(
-                        color: Colors.black87,
-                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w900,
                       ),
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(width: 20),
-              Container(
-                width: 100,
-                height: 100,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.purple.shade100,
-                  boxShadow: const [
-                    BoxShadow(
-                      color: Colors.green,
-                      blurRadius: 2,
-                      offset: Offset(0, 3),
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(width: 20),
-              Container(
-                width: 100,
-                height: 100,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.purple.shade100,
-                  boxShadow: const [
-                    BoxShadow(
-                      color: Colors.green,
-                      blurRadius: 2,
-                      offset: Offset(0, 3),
                     ),
                   ],
                 ),
@@ -212,12 +259,33 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 100,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  color: Colors.purple.shade100,
+                  color: Colors.purple.shade300,
                   boxShadow: const [
                     BoxShadow(
-                      color: Colors.green,
                       blurRadius: 2,
-                      offset: Offset(0, 3),
+                      offset: Offset(2, 2),
+                    ),
+                  ],
+                ),
+                child: const Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Center(
+                      child: Icon(
+                        Icons.shield_sharp,
+                        color: Colors.white,
+                        size: 40,
+                      ),
+                    ),
+                    SizedBox(height: 5),
+                    Text(
+                      "Safety \nTips",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w900,
+                      ),
                     ),
                   ],
                 ),
@@ -228,12 +296,33 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 100,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  color: Colors.purple.shade100,
+                  color: Colors.purple.shade300,
                   boxShadow: const [
                     BoxShadow(
-                      color: Colors.green,
                       blurRadius: 2,
-                      offset: Offset(0, 3),
+                      offset: Offset(2, 2),
+                    ),
+                  ],
+                ),
+                child: const Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Center(
+                      child: Icon(
+                        Icons.library_books_rounded,
+                        color: Colors.white,
+                        size: 40,
+                      ),
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      "Do's and \nDon't",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w900,
+                      ),
                     ),
                   ],
                 ),
@@ -244,10 +333,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 100,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  color: Colors.purple.shade100,
+                  color: const Color.fromARGB(255, 66, 56, 56),
                   boxShadow: const [
                     BoxShadow(
-                      color: Colors.green,
                       blurRadius: 2,
                       offset: Offset(0, 3),
                     ),
