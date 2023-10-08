@@ -9,7 +9,7 @@ import 'package:uhack_app/screens/dos_and_donts_screen/dos_and_donts_screen.dart
 import 'package:uhack_app/screens/emergency_contacts_screen/emergency_contacts_screen.dart';
 import 'package:uhack_app/screens/map_screen/map_screen.dart';
 import 'package:uhack_app/screens/safety_tips_screen/safety_tips_screen.dart';
-import 'package:uhack_app/screens/wether_screen/weather_screen.dart';
+import 'package:uhack_app/screens/wether_screen/ui/get_started.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -140,7 +140,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Navigator.pushAndRemoveUntil(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const WeatherScreen(),
+                      builder: (context) => const GetStarted(),
                     ),
                     (route) => false,
                   );
