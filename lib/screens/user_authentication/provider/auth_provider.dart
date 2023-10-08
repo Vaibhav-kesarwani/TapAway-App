@@ -6,9 +6,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:uhack_app/model/user_model.dart';
-import 'package:uhack_app/screens/otp_screen.dart';
-import 'package:uhack_app/utils/utils.dart';
+import 'package:uhack_app/screens/user_authentication/model/user_model.dart';
+import 'package:uhack_app/screens/user_authentication/user_auth_screen/otp_screen.dart';
+import 'package:uhack_app/screens/user_authentication/utils/utils.dart';
 
 class AuthProvider extends ChangeNotifier {
   bool _isSignedIn = false;

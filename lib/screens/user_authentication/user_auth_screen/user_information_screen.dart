@@ -2,11 +2,11 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:uhack_app/model/user_model.dart';
-import 'package:uhack_app/provider/auth_provider.dart';
 import 'package:uhack_app/screens/home_screen.dart';
-import 'package:uhack_app/utils/utils.dart';
-import 'package:uhack_app/widgets/custom_button.dart';
+import 'package:uhack_app/screens/user_authentication/model/user_model.dart';
+import 'package:uhack_app/screens/user_authentication/provider/auth_provider.dart';
+import 'package:uhack_app/screens/user_authentication/utils/utils.dart';
+import 'package:uhack_app/screens/user_authentication/widgets/custom_button.dart';
 
 class UserInformationScreen extends StatefulWidget {
   const UserInformationScreen({super.key});

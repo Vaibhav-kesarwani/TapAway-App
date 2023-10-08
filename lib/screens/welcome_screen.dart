@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:uhack_app/provider/auth_provider.dart';
 import 'package:uhack_app/screens/home_screen.dart';
-import 'package:uhack_app/screens/register_screen.dart';
-import 'package:uhack_app/widgets/custom_button.dart';
+import 'package:uhack_app/screens/user_authentication/provider/auth_provider.dart';
+import 'package:uhack_app/screens/user_authentication/user_auth_screen/register_screen.dart';
+import 'package:uhack_app/screens/user_authentication/widgets/custom_button.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});

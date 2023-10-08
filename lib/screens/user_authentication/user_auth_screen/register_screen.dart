@@ -1,8 +1,8 @@
 import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:uhack_app/provider/auth_provider.dart';
-import 'package:uhack_app/widgets/custom_button.dart';
+import 'package:uhack_app/screens/user_authentication/provider/auth_provider.dart';
+import 'package:uhack_app/screens/user_authentication/widgets/custom_button.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});

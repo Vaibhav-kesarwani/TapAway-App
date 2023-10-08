@@ -3,11 +3,11 @@ import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:telephony/telephony.dart';
-import 'package:uhack_app/screens/dos_and_donts_screen.dart';
-import 'package:uhack_app/screens/emergency_contacts_screen.dart';
-import 'package:uhack_app/screens/map_screen.dart';
-import 'package:uhack_app/screens/safety_tips_screen.dart';
-import 'package:uhack_app/screens/weather_screen.dart';
+import 'package:uhack_app/screens/dos_and_donts_screen/dos_and_donts_screen.dart';
+import 'package:uhack_app/screens/emergency_contacts_screen/emergency_contacts_screen.dart';
+import 'package:uhack_app/screens/map_screen/map_screen.dart';
+import 'package:uhack_app/screens/safety_tips_screen/safety_tips_screen.dart';
+import 'package:uhack_app/screens/wether_screen/weather_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
