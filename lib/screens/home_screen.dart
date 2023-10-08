@@ -4,15 +4,15 @@ import 'package:geolocator/geolocator.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:telephony/telephony.dart';
 import 'package:uhack_app/screens/about_us_screen/about_us_screen.dart';
+import 'package:uhack_app/screens/custom_drawer.dart';
 import 'package:uhack_app/screens/dos_and_donts_screen/dos_and_donts_screen.dart';
 import 'package:uhack_app/screens/emergency_contacts_screen/emergency_contacts_screen.dart';
 import 'package:uhack_app/screens/map_screen/map_screen.dart';
-import 'package:uhack_app/screens/my_header_drawer.dart';
 import 'package:uhack_app/screens/safety_tips_screen/safety_tips_screen.dart';
 import 'package:uhack_app/screens/wether_screen/weather_screen.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key});
+  const HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -20,8 +20,6 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final Telephony telephony = Telephony.instance;
-
-  var currentPage = DrawerSections.dashboard;
 
   @override
   void initState() {
@@ -42,24 +40,6 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final GlobalKey<ScaffoldState> drawerscaffoldkey =
         GlobalKey<ScaffoldState>();
-
-    // ignore: unused_local_variable
-    var container;
-    if (currentPage == DrawerSections.dashboard) {
-      container = HomeScreen(key: UniqueKey());
-    } else if (currentPage == DrawerSections.contacts) {
-      // container = ContactScreen();
-    } else if (currentPage == DrawerSections.alert) {
-      // container = AlertScreen();
-    } else if (currentPage == DrawerSections.notes) {
-      // container = NoteScreen();
-    } else if (currentPage == DrawerSections.settings) {
-      // container = SettingsScreen();
-    } else if (currentPage == DrawerSections.privacy_policy) {
-      // container = PrivacyPolicyScreen();
-    } else if (currentPage == DrawerSections.send_feedback) {
-      // container = SendFeedbackScreen();
-    }
 
     return Scaffold(
       // backgroundColor: const Color.fromARGB(255, 67, 42, 42),
@@ -100,18 +80,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
       key: drawerscaffoldkey,
-      drawer: Drawer(
-        child: SingleChildScrollView(
-          child: Container(
-            child: Column(
-              children: [
-                const MyHeaderDrawer(),
-                MyDrawerList(),
-              ],
-            ),
-          ),
-        ),
-      ),
+      drawer: const CustomDrawer(),
       body: Column(
         children: [
           GestureDetector(
@@ -483,92 +452,4 @@ class _HomeScreenState extends State<HomeScreen> {
       // Handle any errors that may occur while fetching the location or sending the SMS.
     }
   }
-
-  Widget MyDrawerList() {
-    return Container(
-      padding: const EdgeInsets.only(top: 15),
-      child: Column(
-        children: [
-          menuItem(1, "Dashboard", Icons.dashboard_outlined,
-              currentPage == DrawerSections.dashboard ? true : false),
-          menuItem(2, "Contacts", Icons.people_alt_outlined,
-              currentPage == DrawerSections.contacts ? true : false),
-          menuItem(3, "Alert", Icons.notification_important_rounded,
-              currentPage == DrawerSections.alert ? true : false),
-          menuItem(4, "Notes", Icons.notes,
-              currentPage == DrawerSections.notes ? true : false),
-          const Divider(),
-          menuItem(5, "Settings", Icons.settings,
-              currentPage == DrawerSections.settings ? true : false),
-          const Divider(),
-          menuItem(6, "Privacy Policy", Icons.privacy_tip_outlined,
-              currentPage == DrawerSections.privacy_policy ? true : false),
-          menuItem(7, "Send feedback", Icons.feedback_outlined,
-              currentPage == DrawerSections.send_feedback ? true : false),
-        ],
-      ),
-    );
-  }
-
-  Widget menuItem(int id, String title, IconData icon, bool selected) {
-    return Material(
-      color: selected ? Colors.grey[300] : Colors.transparent,
-      child: InkWell(
-        onTap: () {
-          Navigator.pop(context);
-          setState(() {
-            if (id == 1) {
-              currentPage = DrawerSections.dashboard;
-            } else if (id == 2) {
-              currentPage = DrawerSections.contacts;
-            } else if (id == 3) {
-              currentPage = DrawerSections.alert;
-            } else if (id == 4) {
-              currentPage = DrawerSections.notes;
-            } else if (id == 5) {
-              currentPage = DrawerSections.settings;
-            } else if (id == 6) {
-              currentPage = DrawerSections.privacy_policy;
-            } else if (id == 7) {
-              currentPage = DrawerSections.send_feedback;
-            }
-          });
-        },
-        child: Padding(
-          padding: const EdgeInsets.all(15),
-          child: Row(
-            children: [
-              Expanded(
-                child: Icon(
-                  icon,
-                  size: 20,
-                  color: Colors.black,
-                ),
-              ),
-              Expanded(
-                flex: 3,
-                child: Text(
-                  title,
-                  style: const TextStyle(
-                    color: Colors.black,
-                    fontSize: 16,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-enum DrawerSections {
-  dashboard,
-  contacts,
-  alert,
-  notes,
-  settings,
-  privacy_policy,
-  send_feedback,
 }
