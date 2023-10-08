@@ -57,6 +57,7 @@ dependencies:
   http: ^1.1.0
   sleek_circular_slider: ^2.0.1
   google_maps_flutter: ^2.5.0
+  flutter_compass: ^0.8.0
 
 dev_dependencies:
   flutter_test:
