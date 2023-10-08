@@ -3,6 +3,7 @@ import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:telephony/telephony.dart';
+import 'package:uhack_app/screens/about_us_screen/about_us_screen.dart';
 import 'package:uhack_app/screens/dos_and_donts_screen/dos_and_donts_screen.dart';
 import 'package:uhack_app/screens/emergency_contacts_screen/emergency_contacts_screen.dart';
 import 'package:uhack_app/screens/map_screen/map_screen.dart';
@@ -381,18 +382,50 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               const SizedBox(width: 20),
-              Container(
-                width: 100,
-                height: 100,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: const Color.fromARGB(255, 66, 56, 56),
-                  boxShadow: const [
-                    BoxShadow(
-                      blurRadius: 2,
-                      offset: Offset(0, 3),
-                    ),
-                  ],
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const AboutUsScreen(),
+                      ),
+                      (route) => false);
+                },
+                child: Container(
+                  width: 100,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.purple.shade300,
+                    boxShadow: const [
+                      BoxShadow(
+                        blurRadius: 2,
+                        offset: Offset(2, 2),
+                      ),
+                    ],
+                  ),
+                  child: const Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Center(
+                        child: Icon(
+                          Icons.info_rounded,
+                          color: Colors.white,
+                          size: 40,
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      Text(
+                        "Do's and \nDon't",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w900,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],
