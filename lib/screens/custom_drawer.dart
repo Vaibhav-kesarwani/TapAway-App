@@ -1,18 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:uhack_app/screens/about_us_screen/about_us_screen.dart';
 import 'package:uhack_app/screens/home_screen.dart';
+import 'package:uhack_app/screens/user_authentication/provider/auth_provider.dart';
+import 'package:uhack_app/screens/welcome_screen.dart';
 
-class CustomDrawer extends StatelessWidget {
+class CustomDrawer extends StatefulWidget {
   const CustomDrawer({super.key});
 
   @override
+  State<CustomDrawer> createState() => _CustomDrawerState();
+}
+
+class _CustomDrawerState extends State<CustomDrawer> {
+  @override
   Widget build(BuildContext context) {
+    final ap = Provider.of<AuthProvider>(context, listen: false);
+
     return Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
         children: <Widget>[
-          const DrawerHeader(
-            decoration: BoxDecoration(
+          DrawerHeader(
+            decoration: const BoxDecoration(
               color: Colors.purple,
             ),
             child: Column(
@@ -20,20 +30,20 @@ class CustomDrawer extends StatelessWidget {
               children: [
                 CircleAvatar(
                   radius: 40,
-                  backgroundImage: AssetImage(
-                      'assets/image1.png'), // Add your profile image here
+                  backgroundImage: NetworkImage(
+                      ap.userModel.profilePic), // Your user's profile picture
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Text(
-                  'Vaibhav Kesarwani', // Your user's name
-                  style: TextStyle(
+                  ap.userModel.name, // Your user's name
+                  style: const TextStyle(
                     color: Colors.white,
                     fontSize: 20,
                   ),
                 ),
                 Text(
-                  'abc@example.com', // Your user's email
-                  style: TextStyle(
+                  ap.userModel.email, // Your user's email
+                  style: const TextStyle(
                     color: Colors.white,
                     fontSize: 16,
                   ),
@@ -85,6 +95,14 @@ class CustomDrawer extends StatelessWidget {
             title: const Text('Log Out'),
             onTap: () {
               // Handle the Log Out action
+              ap.userSignOut().then(
+                    (value) => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const WelcomeScreen(),
+                      ),
+                    ),
+                  );
             },
           ),
         ],
