@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
-import 'package:uhack_app/screens/home_screen.dart';
-import 'package:uhack_app/screens/on_boarding_screen/controllers/onboarding_controller.dart';
+import 'package:uhack_app/screens/on_boarding_screen/models/onboarding_info.dart';
+import 'package:uhack_app/screens/welcome_screen.dart';
 
 class OnboardingPage extends StatefulWidget {
   const OnboardingPage({super.key});
@@ -12,26 +11,36 @@ class OnboardingPage extends StatefulWidget {
 }
 
 class _OnboardingPageState extends State<OnboardingPage> {
-  final _controller = OnboardingController();
+  int selectedPageIndex = 0;
+  PageController pageController = PageController();
+  List<OnboardingInfo> onboardingPages = [
+    OnboardingInfo('assets/image1.png', 'User Authentication',
+        'cbidcbicsbc sb ikdbvsvbs bducbdsubsibs hbsjvbs'),
+    OnboardingInfo('assets/image2.png', 'User Authentication',
+        'cbidcbicsbc sb ikdbvsvbs bducbdsubsibs hbsjvbs'),
+    OnboardingInfo('assets/image3.png', 'User Authentication',
+        'cbidcbicsbc sb ikdbvsvbs bducbdsubsibs hbsjvbs'),
+  ];
 
-  // Method to check if the onboarding should be displayed
+  @override
+  void dispose() {
+    pageController.dispose();
+    super.dispose();
+  }
+
   Future<void> checkIfShowOnboarding() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     bool showOnboarding = prefs.getBool('showOnboarding') ?? true;
 
     if (!showOnboarding) {
-      // The onboarding should not be shown, navigate to the main app screen.
-      // You can use Navigator.pushReplacement for this.
       Navigator.pushAndRemoveUntil(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const HomeScreen(),
-          ),
-          (route) => false);
+        context,
+        MaterialPageRoute(builder: (context) => const WelcomeScreen()),
+        (route) => false,
+      );
     }
   }
 
-  // Method to mark the onboarding as completed
   Future<void> markOnboardingAsCompleted() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.setBool('showOnboarding', false);
@@ -43,6 +52,22 @@ class _OnboardingPageState extends State<OnboardingPage> {
     checkIfShowOnboarding();
   }
 
+  void forwardAction() {
+    if (selectedPageIndex == onboardingPages.length - 1) {
+      Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(builder: (context) => const WelcomeScreen()),
+        (route) => false,
+      );
+    } else {
+      pageController.nextPage(
+          duration: const Duration(milliseconds: 300), curve: Curves.ease);
+      setState(() {
+        selectedPageIndex++;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,20 +75,22 @@ class _OnboardingPageState extends State<OnboardingPage> {
         child: Stack(
           children: [
             PageView.builder(
-              controller: _controller.pageController,
-              onPageChanged: _controller.selectedPageIndex,
-              itemCount: _controller.onboardingPages.length,
+              controller: pageController,
+              onPageChanged: (index) {
+                setState(() {
+                  selectedPageIndex = index;
+                });
+              },
+              itemCount: onboardingPages.length,
               itemBuilder: (context, index) {
                 return Container(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Image.asset(
-                        _controller.onboardingPages[index].imageAsset,
-                      ),
+                      Image.asset(onboardingPages[index].imageAsset),
                       const SizedBox(height: 32),
                       Text(
-                        _controller.onboardingPages[index].title,
+                        onboardingPages[index].title,
                         style: const TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.w500,
@@ -73,7 +100,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 64),
                         child: Text(
-                          _controller.onboardingPages[index].description,
+                          onboardingPages[index].description,
                           textAlign: TextAlign.center,
                           style: const TextStyle(
                             fontSize: 18,
@@ -90,22 +117,20 @@ class _OnboardingPageState extends State<OnboardingPage> {
               left: 20,
               child: Row(
                 children: List.generate(
-                  _controller.onboardingPages.length,
-                  (index) => Obx(
-                    () {
-                      return Container(
-                        margin: const EdgeInsets.all(4),
-                        width: 12,
-                        height: 12,
-                        decoration: BoxDecoration(
-                          color: _controller.selectedPageIndex.value == index
-                              ? Colors.red
-                              : Colors.grey,
-                          shape: BoxShape.circle,
-                        ),
-                      );
-                    },
-                  ),
+                  onboardingPages.length,
+                  (index) {
+                    return Container(
+                      margin: const EdgeInsets.all(4),
+                      width: 12,
+                      height: 12,
+                      decoration: BoxDecoration(
+                        color: selectedPageIndex == index
+                            ? Colors.red
+                            : Colors.grey,
+                        shape: BoxShape.circle,
+                      ),
+                    );
+                  },
                 ),
               ),
             ),
@@ -113,12 +138,10 @@ class _OnboardingPageState extends State<OnboardingPage> {
               right: 20,
               bottom: 20,
               child: FloatingActionButton(
-                onPressed: _controller.forwardAction,
-                child: Obx(
-                  () {
-                    return Text(_controller.isLastPage ? 'Done' : 'Next');
-                  },
-                ),
+                onPressed: forwardAction,
+                child: Text(selectedPageIndex == onboardingPages.length - 1
+                    ? 'Done'
+                    : 'Next'),
               ),
             ),
           ],

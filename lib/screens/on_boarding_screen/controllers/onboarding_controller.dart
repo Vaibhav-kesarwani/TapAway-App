@@ -11,8 +11,7 @@ class OnboardingController extends GetxController {
 
   forwardAction() {
     if (isLastPage) {
-      // goto to welcome page
-      Get.to(() => const WelcomeScreen());
+      Get.offAll(() => const WelcomeScreen());
     } else {
       pageController.nextPage(duration: 300.milliseconds, curve: Curves.ease);
     }
