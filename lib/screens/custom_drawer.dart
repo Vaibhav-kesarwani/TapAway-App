@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:uhack_app/screens/about_us_screen/about_us_screen.dart';
+import 'package:uhack_app/screens/home_screen.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});
@@ -39,6 +40,26 @@ class CustomDrawer extends StatelessWidget {
                 ),
               ],
             ),
+          ),
+          ListTile(
+            leading: const Icon(Icons.dashboard_outlined),
+            title: const Text('Home'),
+            onTap: () {
+              // Handle the Home action
+              Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const HomeScreen(),
+                  ),
+                  (route) => false);
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.settings),
+            title: const Text('Settings'),
+            onTap: () {
+              // Handle the Settings action
+            },
           ),
           ListTile(
             leading: const Icon(Icons.settings),
