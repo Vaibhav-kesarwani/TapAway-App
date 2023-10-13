@@ -82,11 +82,12 @@ class _CustomDrawerState extends State<CustomDrawer> {
             leading: const Icon(Icons.info),
             title: const Text('About Us'),
             onTap: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => const AboutUsScreen(),
-                ),
-              );
+              Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const AboutUsScreen(),
+                  ),
+                  (route) => false);
             },
           ),
           const Divider(),
@@ -96,12 +97,12 @@ class _CustomDrawerState extends State<CustomDrawer> {
             onTap: () {
               // Handle the Log Out action
               ap.userSignOut().then(
-                    (value) => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const WelcomeScreen(),
-                      ),
-                    ),
+                    (value) => Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const WelcomeScreen(),
+                        ),
+                        (route) => false),
                   );
             },
           ),

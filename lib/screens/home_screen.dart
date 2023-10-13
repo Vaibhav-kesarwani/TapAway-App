@@ -24,15 +24,28 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    _requestPermission();
+    _requestPermissions();
   }
 
-  Future<void> _requestPermission() async {
-    final PermissionStatus status =
-        await Permission.locationWhenInUse.request();
+  Future<void> _requestPermissions() async {
+    final Map<Permission, PermissionStatus> statuses = await [
+      Permission.locationWhenInUse,
+      Permission.phone,
+      Permission.sms,
+      // Add more permissions as needed
+    ].request();
 
-    if (status.isGranted) {
-      // Permission granted, you can now access the location.
+    // Check the status of each permission
+    if (statuses[Permission.locationWhenInUse]!.isGranted) {
+      // Location permission granted, you can now access the location.
+    }
+
+    if (statuses[Permission.camera]!.isGranted) {
+      // Camera permission granted, you can now use the camera.
+    }
+
+    if (statuses[Permission.microphone]!.isGranted) {
+      // Microphone permission granted, you can now access the microphone.
     }
   }
 
@@ -441,7 +454,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
       // Compose the location message
       final String locationMessage =
-          'Hello,\nhttps://www.google.com/maps/search/?api=1&query=$latitude,$longitude';
+          'Jaldi hatoo wha sa\nhttps://www.google.com/maps/search/?api=1&query=$latitude,$longitude';
 
       // Send the location via SMS
       telephony.sendSms(
