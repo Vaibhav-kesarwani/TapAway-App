@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:uhack_app/screens/about_us_screen/about_us_screen.dart';
 import 'package:uhack_app/screens/home_screen.dart';
+import 'package:uhack_app/screens/map_screen/map_screen.dart';
+import 'package:uhack_app/screens/settings_screen/setting_screen.dart';
 import 'package:uhack_app/screens/user_authentication/provider/auth_provider.dart';
 import 'package:uhack_app/screens/welcome_screen.dart';
 
@@ -65,10 +67,16 @@ class _CustomDrawerState extends State<CustomDrawer> {
             },
           ),
           ListTile(
-            leading: const Icon(Icons.settings),
-            title: const Text('Settings'),
+            leading: const Icon(Icons.location_on_sharp),
+            title: const Text('Map'),
             onTap: () {
-              // Handle the Settings action
+              // Handle the Map action
+              Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const MapScreen(),
+                  ),
+                  (route) => false);
             },
           ),
           ListTile(
@@ -76,6 +84,12 @@ class _CustomDrawerState extends State<CustomDrawer> {
             title: const Text('Settings'),
             onTap: () {
               // Handle the Settings action
+              Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const SettingScreen(),
+                  ),
+                  (route) => false);
             },
           ),
           ListTile(
