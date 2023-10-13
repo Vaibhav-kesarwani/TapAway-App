@@ -454,8 +454,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
       // Compose the location message
       final String locationMessage =
-          'Jaldi hatoo wha sa\nhttps://www.google.com/maps/search/?api=1&query=$latitude,$longitude';
-
+          'Your acquaintance is in an loathsome situation, here is their current location https://www.google.com/maps/search/?api=1&query=$latitude,$longitude and the respective rescue agencies are on their way for their rescue.\nआपका परिचित एक घृणित स्थिति में है, यहां उनका वर्तमान स्थान है और संबंधित बचाव एजेंसियां ​​उनके बचाव के लिए काम कर रही हैं।\nhttps://www.google.com/maps/search/?api=1&query=$latitude,$longitude';
       // Send the location via SMS
       telephony.sendSms(
         to: phoneNumber,
