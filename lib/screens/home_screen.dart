@@ -4,6 +4,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:telephony/telephony.dart';
 import 'package:uhack_app/screens/about_us_screen/about_us_screen.dart';
+import 'package:uhack_app/screens/alert_screen/alert_screen.dart';
 import 'package:uhack_app/screens/custom_drawer.dart';
 import 'package:uhack_app/screens/dos_and_donts_screen/dos_and_donts_screen.dart';
 import 'package:uhack_app/screens/emergency_contacts_screen/emergency_contacts_screen.dart';
@@ -88,7 +89,14 @@ class _HomeScreenState extends State<HomeScreen> {
           IconButton(
             alignment: Alignment.centerLeft,
             icon: const Icon(Icons.notifications_rounded),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const AlertScreen(),
+                  ),
+                  (route) => false);
+            },
           ),
         ],
       ),

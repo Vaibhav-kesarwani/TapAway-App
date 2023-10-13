@@ -21,7 +21,7 @@ class AuthProvider extends ChangeNotifier {
   String get uid => _uid!;
 
   UserModel? _userModel;
-  UserModel get userModel => _userModel!;
+  UserModel? get userModel => _userModel!;
 
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
   final FirebaseFirestore _firebaseFireStore = FirebaseFirestore.instance;
@@ -170,13 +170,13 @@ class AuthProvider extends ChangeNotifier {
         phoneNumber: snapshot['phoneNumber'],
         uid: snapshot['uid'],
       );
-      _uid = userModel.uid;
+      _uid = userModel?.uid;
     });
   }
 
   Future saveUserDataToSP() async {
     SharedPreferences s = await SharedPreferences.getInstance();
-    await s.setString("user-model", jsonEncode(userModel.toMap()));
+    await s.setString("user-model", jsonEncode(userModel?.toMap()));
   }
 
   Future getDataFromSP() async {

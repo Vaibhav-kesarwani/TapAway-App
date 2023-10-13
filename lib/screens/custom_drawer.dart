@@ -33,18 +33,18 @@ class _CustomDrawerState extends State<CustomDrawer> {
                 CircleAvatar(
                   radius: 40,
                   backgroundImage: NetworkImage(
-                      ap.userModel.profilePic), // Your user's profile picture
+                      ap.userModel!.profilePic), // Your user's profile picture
                 ),
                 const SizedBox(height: 10),
                 Text(
-                  ap.userModel.name, // Your user's name
+                  ap.userModel!.name, // Your user's name
                   style: const TextStyle(
                     color: Colors.white,
                     fontSize: 20,
                   ),
                 ),
                 Text(
-                  ap.userModel.email, // Your user's email
+                  ap.userModel!.email, // Your user's email
                   style: const TextStyle(
                     color: Colors.white,
                     fontSize: 16,
