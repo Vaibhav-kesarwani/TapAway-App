@@ -25,35 +25,34 @@ class _CustomDrawerState extends State<CustomDrawer> {
         children: <Widget>[
           DrawerHeader(
             decoration: const BoxDecoration(
-              color: Colors.purple,
+              color: Color.fromARGB(255, 95, 93, 93),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                if (ap.isSignedIn && ap.userModel != null)
-                  ...[
-                    CircleAvatar(
-                      radius: 40,
-                      backgroundImage: NetworkImage(
-                        ap.userModel!.profilePic,
-                      ),
+                if (ap.isSignedIn && ap.userModel != null) ...[
+                  CircleAvatar(
+                    radius: 40,
+                    backgroundImage: NetworkImage(
+                      ap.userModel!.profilePic,
                     ),
-                    const SizedBox(height: 10),
-                    Text(
-                      ap.userModel!.name,
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
-                      ),
+                  ),
+                  const SizedBox(height: 10),
+                  Text(
+                    ap.userModel!.name,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
                     ),
-                    Text(
-                      ap.userModel!.email,
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                      ),
+                  ),
+                  Text(
+                    ap.userModel!.email,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
                     ),
-                  ],
+                  ),
+                ],
               ],
             ),
           ),
@@ -119,14 +118,14 @@ class _CustomDrawerState extends State<CustomDrawer> {
             onTap: () {
               // Handle the Log Out action
               ap.userSignOut().then(
-                (value) => Navigator.pushAndRemoveUntil(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const WelcomeScreen(),
-                  ),
-                  (route) => false,
-                ),
-              );
+                    (value) => Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const WelcomeScreen(),
+                      ),
+                      (route) => false,
+                    ),
+                  );
             },
           ),
         ],

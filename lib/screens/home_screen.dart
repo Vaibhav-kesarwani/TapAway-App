@@ -1,7 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:provider/provider.dart';
 import 'package:telephony/telephony.dart';
 import 'package:uhack_app/screens/about_us_screen/about_us_screen.dart';
 import 'package:uhack_app/screens/alert_screen/alert_screen.dart';
@@ -10,6 +12,8 @@ import 'package:uhack_app/screens/dos_and_donts_screen/dos_and_donts_screen.dart
 import 'package:uhack_app/screens/emergency_contacts_screen/emergency_contacts_screen.dart';
 import 'package:uhack_app/screens/map_screen/map_screen.dart';
 import 'package:uhack_app/screens/safety_tips_screen/safety_tips_screen.dart';
+import 'package:uhack_app/screens/user_authentication/provider/auth_provider.dart';
+import 'package:uhack_app/screens/user_authentication/utils/utils.dart';
 import 'package:uhack_app/screens/wether_screen/weather_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -52,6 +56,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: unused_local_variable
+    final ap = Provider.of<AuthProvider>(context, listen: false);
+
     final GlobalKey<ScaffoldState> drawerscaffoldkey =
         GlobalKey<ScaffoldState>();
 
@@ -69,7 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: Colors.white,
         centerTitle: true,
         title: const Text(
-          "Tap Away",
+          "tapAway",
           style: TextStyle(
             fontSize: 30,
             color: Colors.black,
@@ -134,14 +141,36 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: InkWell(
                     borderRadius:
                         BorderRadius.circular(100), // Make it a circle
-                    onLongPress: () {
-                      // Handle tap here if needed
-                      FlutterPhoneDirectCaller.callNumber('7784050116');
-                      _getUserLocationAndSendSms("7784050116");
-                      _getUserLocationAndSendSms("9219388303");
-                      _getUserLocationAndSendSms("7985668749");
-                      _getUserLocationAndSendSms("8896067454");
-                      _getUserLocationAndSendSms("6392127437");
+                    onLongPress: () async {
+                      showSnackBar(context, "Your message is sent");
+
+                      // Fetch the emergency contact data
+                      EmergencyContactModel? emergencyContactData =
+                          await getEmergencyContactData();
+
+                      if (emergencyContactData != null) {
+                        // Get the primary emergency number
+                        String primaryEmergencyNumber =
+                            emergencyContactData.primaryEmergencyNumber;
+
+                        List<String> secondaryEmergencyNumber =
+                            emergencyContactData.emergencyNumbers;
+
+                        await FlutterPhoneDirectCaller.callNumber(
+                            primaryEmergencyNumber);
+
+                        // Send SMS to the primary emergency number
+                        await _getUserLocationAndSendSms(
+                          primaryEmergencyNumber,
+                        );
+
+                        // Send SMS to secondary emergency numbers
+                        for (String phoneNumber in secondaryEmergencyNumber) {
+                          await _getUserLocationAndSendSms(phoneNumber);
+                        }
+                      } else {
+                        // Handle the case where no emergency contact data is available.
+                      }
                     },
                     child: const Center(
                       child: Text(
@@ -455,6 +484,20 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
     );
+  }
+
+  Future<EmergencyContactModel?> getEmergencyContactData() async {
+    FirebaseFirestore firestore = FirebaseFirestore.instance;
+    QuerySnapshot querySnapshot =
+        await firestore.collection('emergencyContacts').get();
+
+    if (querySnapshot.docs.isNotEmpty) {
+      DocumentSnapshot documentSnapshot = querySnapshot.docs.first;
+      return EmergencyContactModel.fromMap(
+          documentSnapshot.data() as Map<String, dynamic>);
+    } else {
+      return null;
+    }
   }
 
   Future<void> _getUserLocationAndSendSms(String phoneNumber) async {
