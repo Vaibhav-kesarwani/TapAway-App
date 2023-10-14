@@ -212,7 +212,7 @@ class _MapScreenState extends State<MapScreen> {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 80,
-        backgroundColor: Colors.purple,
+        backgroundColor: Colors.black,
         centerTitle: true,
         title: const Text(
           'Map',
@@ -223,7 +223,7 @@ class _MapScreenState extends State<MapScreen> {
             fontWeight: FontWeight.bold,
           ),
         ),
-        elevation: 0.0,
+        elevation: 2.0,
         leading: IconButton(
           onPressed: () {
             Navigator.pushAndRemoveUntil(

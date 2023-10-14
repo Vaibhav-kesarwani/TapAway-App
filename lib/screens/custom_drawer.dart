@@ -29,27 +29,31 @@ class _CustomDrawerState extends State<CustomDrawer> {
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                CircleAvatar(
-                  radius: 40,
-                  backgroundImage: NetworkImage(
-                      ap.userModel!.profilePic), // Your user's profile picture
-                ),
-                const SizedBox(height: 10),
-                Text(
-                  ap.userModel!.name, // Your user's name
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                  ),
-                ),
-                Text(
-                  ap.userModel!.email, // Your user's email
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                  ),
-                ),
+              children: <Widget>[
+                if (ap.isSignedIn && ap.userModel != null)
+                  ...[
+                    CircleAvatar(
+                      radius: 40,
+                      backgroundImage: NetworkImage(
+                        ap.userModel!.profilePic,
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    Text(
+                      ap.userModel!.name,
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                      ),
+                    ),
+                    Text(
+                      ap.userModel!.email,
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                      ),
+                    ),
+                  ],
               ],
             ),
           ),
@@ -59,11 +63,12 @@ class _CustomDrawerState extends State<CustomDrawer> {
             onTap: () {
               // Handle the Home action
               Navigator.pushAndRemoveUntil(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const HomeScreen(),
-                  ),
-                  (route) => false);
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const HomeScreen(),
+                ),
+                (route) => false,
+              );
             },
           ),
           ListTile(
@@ -72,11 +77,12 @@ class _CustomDrawerState extends State<CustomDrawer> {
             onTap: () {
               // Handle the Map action
               Navigator.pushAndRemoveUntil(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const MapScreen(),
-                  ),
-                  (route) => false);
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const MapScreen(),
+                ),
+                (route) => false,
+              );
             },
           ),
           ListTile(
@@ -85,11 +91,12 @@ class _CustomDrawerState extends State<CustomDrawer> {
             onTap: () {
               // Handle the Settings action
               Navigator.pushAndRemoveUntil(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const SettingScreen(),
-                  ),
-                  (route) => false);
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const SettingScreen(),
+                ),
+                (route) => false,
+              );
             },
           ),
           ListTile(
@@ -97,11 +104,12 @@ class _CustomDrawerState extends State<CustomDrawer> {
             title: const Text('About Us'),
             onTap: () {
               Navigator.pushAndRemoveUntil(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const AboutUsScreen(),
-                  ),
-                  (route) => false);
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const AboutUsScreen(),
+                ),
+                (route) => false,
+              );
             },
           ),
           const Divider(),
@@ -111,13 +119,14 @@ class _CustomDrawerState extends State<CustomDrawer> {
             onTap: () {
               // Handle the Log Out action
               ap.userSignOut().then(
-                    (value) => Navigator.pushAndRemoveUntil(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const WelcomeScreen(),
-                        ),
-                        (route) => false),
-                  );
+                (value) => Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const WelcomeScreen(),
+                  ),
+                  (route) => false,
+                ),
+              );
             },
           ),
         ],
