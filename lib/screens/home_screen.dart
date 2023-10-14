@@ -8,10 +8,9 @@ import 'package:telephony/telephony.dart';
 import 'package:uhack_app/screens/about_us_screen/about_us_screen.dart';
 import 'package:uhack_app/screens/alert_screen/alert_screen.dart';
 import 'package:uhack_app/screens/custom_drawer.dart';
-import 'package:uhack_app/screens/dos_and_donts_screen/dos_and_donts_screen.dart';
 import 'package:uhack_app/screens/emergency_contacts_screen/emergency_contacts_screen.dart';
 import 'package:uhack_app/screens/map_screen/map_screen.dart';
-import 'package:uhack_app/screens/safety_tips_screen/safety_tips_screen.dart';
+import 'package:uhack_app/screens/safety_tips_screen/views/safety_tips_screen.dart';
 import 'package:uhack_app/screens/user_authentication/provider/auth_provider.dart';
 import 'package:uhack_app/screens/user_authentication/utils/utils.dart';
 import 'package:uhack_app/screens/wether_screen/weather_screen.dart';
@@ -374,53 +373,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       SizedBox(height: 5),
                       Text(
                         "Safety \nTips",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w900,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              const SizedBox(width: 20),
-              GestureDetector(
-                onTap: () {
-                  Navigator.pushAndRemoveUntil(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const DosAndDontsScreen(),
-                      ),
-                      (route) => false);
-                },
-                child: Container(
-                  width: 100,
-                  height: 100,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: Colors.white,
-                    boxShadow: const [
-                      BoxShadow(
-                        blurRadius: 2,
-                        offset: Offset(2, 2),
-                      ),
-                    ],
-                  ),
-                  child: const Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Center(
-                        child: Icon(
-                          Icons.library_books_rounded,
-                          color: Colors.black,
-                          size: 40,
-                        ),
-                      ),
-                      SizedBox(height: 10),
-                      Text(
-                        "Do's and \nDon't",
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Colors.black,
