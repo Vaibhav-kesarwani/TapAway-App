@@ -1,37 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:uhack_app/screens/about_us_screen/models/about_us_info.dart';
 import 'package:uhack_app/screens/home_screen.dart';
-import 'package:uhack_app/screens/safety_tips_screen/models/onboarding_info.dart';
 
-class SafetyTipsScreen extends StatefulWidget {
-  const SafetyTipsScreen({super.key});
+class AboutUsScreen extends StatefulWidget {
+  const AboutUsScreen({super.key});
 
   @override
-  State<SafetyTipsScreen> createState() => _SafetyTipsScreenState();
+  State<AboutUsScreen> createState() => _AboutUsScreenState();
 }
 
-class _SafetyTipsScreenState extends State<SafetyTipsScreen> {
+class _AboutUsScreenState extends State<AboutUsScreen> {
   int selectedPageIndex = 0;
   PageController pageController = PageController();
-  List<OnboardingInfo> onboardingPages = [
-    OnboardingInfo(
+  List<AboutUsInfo> onboardingPages = [
+    AboutUsInfo(
       'assets/on1.png',
       "Don't press the button unnecessarily!",
-      "Use only in emergency conditions otherwise you'll be penalized.",
-    ),
-    OnboardingInfo(
-      'assets/on2.png',
-      'Attentive Person!',
-      'Your emergency contact should be attentive in picking the calls.',
-    ),
-    OnboardingInfo(
-      'assets/on3.png',
-      'Active GPS!',
-      "Your phone's GPS should be always turned on.",
-    ),
-    OnboardingInfo(
-      'assets/on4.png',
-      'Long Press!',
-      'Long press the button in case of an emergency.',
+      "Our technoloy platform connects several nearby rescue agencies, hospitals and police stations and also share the location of the victim at the time of calamity so that necessary aid can be provided to those who",
     ),
   ];
 

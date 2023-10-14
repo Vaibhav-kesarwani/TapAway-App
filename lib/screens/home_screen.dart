@@ -5,7 +5,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:provider/provider.dart';
 import 'package:telephony/telephony.dart';
-import 'package:uhack_app/screens/about_us_screen/about_us_screen.dart';
+import 'package:uhack_app/screens/about_us_screen/views/about_us_screen.dart';
 import 'package:uhack_app/screens/alert_screen/alert_screen.dart';
 import 'package:uhack_app/screens/custom_drawer.dart';
 import 'package:uhack_app/screens/emergency_contacts_screen/emergency_contacts_screen.dart';

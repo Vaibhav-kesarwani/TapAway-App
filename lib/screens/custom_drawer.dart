@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:uhack_app/screens/about_us_screen/about_us_screen.dart';
+import 'package:uhack_app/screens/about_us_screen/views/about_us_screen.dart';
 import 'package:uhack_app/screens/home_screen.dart';
 import 'package:uhack_app/screens/map_screen/map_screen.dart';
 import 'package:uhack_app/screens/settings_screen/setting_screen.dart';
