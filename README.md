@@ -16,4 +16,4 @@ Explore the "Tap Away" app and be a part of a community dedicated to saving live
 
 ***Your safety matters. Choose Tap Away.***
 
-<img src="logo.png" width="100" height="100" />
+<img src="assets/logo.png" width="100" height="100" />
