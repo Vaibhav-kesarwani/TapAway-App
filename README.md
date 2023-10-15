@@ -16,4 +16,4 @@ Explore the "Tap Away" app and be a part of a community dedicated to saving live
 
 ***Your safety matters. Choose Tap Away.***
 
-![picture alt](assets/image1.png/200x150 "Title is optional")
+![picture alt](assets/image1.png/ "Title is optional")
