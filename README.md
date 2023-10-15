@@ -16,4 +16,4 @@ Explore the "Tap Away" app and be a part of a community dedicated to saving live
 
 ***Your safety matters. Choose Tap Away.***
 
-![WhatsApp Image 2023-10-15 at 21 31 46](https://github.com/Vaibhav-kesarwani/Disaster-Management-App/assets/116189379/030680f9-1c0b-425d-8ccb-35a9d6bcd148/50x50)
+![WhatsApp Image 2023-10-15 at 21 31 46](https://github.com/Vaibhav-kesarwani/Disaster-Management-App/assets/116189379/030680f9-1c0b-425d-8ccb-35a9d6bcd148/50x50){:width="300px"}
