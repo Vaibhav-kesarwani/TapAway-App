@@ -4,7 +4,7 @@ Tap Away is a life-saving mobile application designed to prioritize your safety 
 
 ## Key Features:
 
-**User Registration:** Easily register yourself to access emergency services.\\
+**User Registration:** Easily register yourself to access emergency services.\
 **SOS Button:** In case of a calamity, a simple press of the SOS button sends your location to both concerned authorities and your designated relatives and friends.\
 **Swift Response:** Our team of experts and emergency services will swiftly reach the site to provide aid to the victim and ensure their safety.
 
