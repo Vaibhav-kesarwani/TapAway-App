@@ -19,6 +19,8 @@ Explore the "Tap Away" app and be a part of a community dedicated to saving live
 ----
 ## Welcome Screen
 
+<p align="center">
 <img center width="250" src="https://github.com/Vaibhav-kesarwani/Disaster-Management-App/assets/116189379/030680f9-1c0b-425d-8ccb-35a9d6bcd148">
+</p>
 
 kubh ni wo that kuch tho
