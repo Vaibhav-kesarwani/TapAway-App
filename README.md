@@ -29,3 +29,9 @@ This Flutter code represents the welcome screen of a mobile app, providing users
 * An option to "Get started" or navigate to the registration screen, depending on the user's authentication status.
 * Utilizes Flutter's Material Design and Provider for state management.\
 This code is part of a user authentication flow within a Flutter application. It offers an engaging entry point for users and seamless navigation to the main application when signed in.
+
+## Register and OTP Authentication Screen 
+
+<p align="center">
+<img center width="250" src="https://github.com/Vaibhav-kesarwani/My-Faviourat-image/blob/main/image.jpeg">
+</p>
