@@ -47,7 +47,7 @@ class _UserInformationScreenState extends State<UserInformationScreen> {
           child: isLoading == true
               ? const Center(
                   child: CircularProgressIndicator(
-                    color: Colors.purple,
+                    color: Colors.teal,
                   ),
                 )
               : Center(
@@ -59,7 +59,7 @@ class _UserInformationScreenState extends State<UserInformationScreen> {
                           onTap: () => selectImage(),
                           child: image == null
                               ? const CircleAvatar(
-                                  backgroundColor: Colors.purple,
+                                  backgroundColor: Colors.teal,
                                   radius: 50,
                                   child: Icon(
                                     Icons.account_circle_rounded,
@@ -81,7 +81,7 @@ class _UserInformationScreenState extends State<UserInformationScreen> {
                             children: [
                               //name
                               textField(
-                                hintText: "Vaibhav Kesarwani",
+                                hintText: "Enter your name",
                                 icon: Icons.account_circle_rounded,
                                 inputType: TextInputType.name,
                                 maxLines: 1,
@@ -136,7 +136,7 @@ class _UserInformationScreenState extends State<UserInformationScreen> {
     return Padding(
       padding: const EdgeInsets.only(bottom: 15),
       child: TextFormField(
-        cursorColor: Colors.purple,
+        cursorColor: Colors.teal,
         controller: controller,
         keyboardType: inputType,
         maxLines: maxLines,
@@ -145,7 +145,7 @@ class _UserInformationScreenState extends State<UserInformationScreen> {
             margin: const EdgeInsets.all(8),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
-              color: Colors.purple,
+              color: Colors.teal,
             ),
             child: Icon(
               icon,
