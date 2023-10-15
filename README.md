@@ -16,4 +16,4 @@ Explore the "Tap Away" app and be a part of a community dedicated to saving live
 
 ***Your safety matters. Choose Tap Away.***
 
-<img src="https://github.com/Vaibhav-kesarwani/Disaster-Management-App/raw/main/assets/116189379/030680f9-1c0b-425d-8ccb-35a9d6bcd148/50x50.jpg" width="300">
+<img src="logo.png" width="100" height="100" />
