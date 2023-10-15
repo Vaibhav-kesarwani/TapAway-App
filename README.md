@@ -16,4 +16,4 @@ Explore the "Tap Away" app and be a part of a community dedicated to saving live
 
 ***Your safety matters. Choose Tap Away.***
 
-![GitHub Logo](assets/logo.png)
+Markup : ![picture alt](http://via.placeholder.com/200x150 "Title is optional")
