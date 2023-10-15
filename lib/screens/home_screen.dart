@@ -62,7 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
         GlobalKey<ScaffoldState>();
 
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         toolbarHeight: 90,
         shadowColor: Colors.white,
@@ -72,13 +72,13 @@ class _HomeScreenState extends State<HomeScreen> {
             bottomRight: Radius.circular(30),
           ),
         ),
-        backgroundColor: Colors.white,
+        backgroundColor: const Color.fromARGB(255, 55, 143, 134),
         centerTitle: true,
         title: const Text(
           "tapAway",
           style: TextStyle(
             fontSize: 30,
-            color: Colors.black,
+            color: Colors.white,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -92,7 +92,7 @@ class _HomeScreenState extends State<HomeScreen> {
           },
           icon: const Icon(
             Icons.menu_rounded,
-            color: Colors.black,
+            color: Colors.white,
           ),
         ),
         actions: <Widget>[
@@ -100,7 +100,7 @@ class _HomeScreenState extends State<HomeScreen> {
             alignment: Alignment.centerLeft,
             icon: const Icon(
               Icons.notifications_rounded,
-              color: Colors.black,
+              color: Colors.white,
             ),
             onPressed: () {
               Navigator.pushAndRemoveUntil(
@@ -127,7 +127,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   shape: BoxShape.circle,
                   boxShadow: [
                     BoxShadow(
-                      // color: Colors.white,
                       blurRadius: 2,
                       offset: Offset(3, 3),
                     ),
@@ -135,8 +134,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   color: Color.fromARGB(255, 255, 1, 1),
                 ),
                 child: Material(
-                  color: Colors
-                      .transparent, // Set the background color to transparent
+                  color: Colors.transparent,
                   child: InkWell(
                     borderRadius:
                         BorderRadius.circular(100), // Make it a circle
@@ -177,7 +175,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 60,
+                          fontSize: 62,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -206,7 +204,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   height: 100,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    color: Colors.white,
+                    color: const Color.fromARGB(255, 55, 143, 134),
                     boxShadow: const [
                       BoxShadow(
                         blurRadius: 2,
@@ -220,7 +218,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Center(
                         child: Icon(
                           Icons.wb_cloudy_rounded,
-                          color: Colors.black,
+                          color: Colors.white,
                           size: 40,
                         ),
                       ),
@@ -230,7 +228,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: 16,
-                          color: Colors.black,
+                          color: Colors.white,
                           fontWeight: FontWeight.w900,
                         ),
                       ),
@@ -253,7 +251,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   height: 100,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    color: Colors.white,
+                    color: const Color.fromARGB(255, 55, 143, 134),
                     boxShadow: const [
                       BoxShadow(
                         blurRadius: 2,
@@ -267,7 +265,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Center(
                         child: Icon(
                           Icons.call_rounded,
-                          color: Colors.black,
+                          color: Colors.white,
                           size: 40,
                         ),
                       ),
@@ -276,7 +274,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         "Emergency \nContacts",
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          color: Colors.black,
+                          color: Colors.white,
                           fontSize: 16,
                           fontWeight: FontWeight.w900,
                         ),
@@ -300,7 +298,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   height: 100,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    color: Colors.white,
+                    color: const Color.fromARGB(255, 55, 143, 134),
                     boxShadow: const [
                       BoxShadow(
                         blurRadius: 2,
@@ -314,7 +312,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Center(
                         child: Icon(
                           Icons.location_on_sharp,
-                          color: Colors.black,
+                          color: Colors.white,
                           size: 40,
                         ),
                       ),
@@ -323,7 +321,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         "Map",
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          color: Colors.black,
+                          color: Colors.white,
                           fontSize: 16,
                           fontWeight: FontWeight.w900,
                         ),
@@ -352,7 +350,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   height: 100,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    color: Colors.white,
+                    color: const Color.fromARGB(255, 55, 143, 134),
                     boxShadow: const [
                       BoxShadow(
                         blurRadius: 2,
@@ -366,7 +364,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Center(
                         child: Icon(
                           Icons.shield_sharp,
-                          color: Colors.black,
+                          color: Colors.white,
                           size: 40,
                         ),
                       ),
@@ -375,7 +373,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         "Safety \nTips",
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          color: Colors.black,
+                          color: Colors.white,
                           fontSize: 16,
                           fontWeight: FontWeight.w900,
                         ),
@@ -399,7 +397,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   height: 100,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    color: Colors.white,
+                    color: const Color.fromARGB(255, 55, 143, 134),
                     boxShadow: const [
                       BoxShadow(
                         blurRadius: 2,
@@ -413,7 +411,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Center(
                         child: Icon(
                           Icons.info_rounded,
-                          color: Colors.black,
+                          color: Colors.white,
                           size: 40,
                         ),
                       ),
@@ -422,7 +420,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         "About \nus",
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          color: Colors.black,
+                          color: Colors.white,
                           fontSize: 16,
                           fontWeight: FontWeight.w900,
                         ),

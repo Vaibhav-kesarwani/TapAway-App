@@ -48,10 +48,10 @@ class _EmergencyContactScreenState extends State<EmergencyContactScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        toolbarHeight: 80,
-        backgroundColor: Colors.white,
+        toolbarHeight: 90,
+        backgroundColor: const Color.fromARGB(255, 55, 143, 134),
         elevation: 0.0,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
@@ -63,7 +63,7 @@ class _EmergencyContactScreenState extends State<EmergencyContactScreen> {
         title: const Text(
           'Emergency Contacts',
           style: TextStyle(
-            color: Colors.black,
+            color: Colors.white,
             fontSize: 20,
             fontWeight: FontWeight.w900,
           ),
@@ -80,7 +80,7 @@ class _EmergencyContactScreenState extends State<EmergencyContactScreen> {
           },
           icon: const Icon(
             Icons.keyboard_arrow_left_rounded,
-            color: Colors.black,
+            color: Colors.white,
             size: 40,
           ),
         ),
@@ -90,16 +90,16 @@ class _EmergencyContactScreenState extends State<EmergencyContactScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(height: 50),
+              const SizedBox(height: 30),
               const Text(
                 "Enter primary emergency number",
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w900,
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 20),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 40),
                 child: Container(
@@ -108,7 +108,7 @@ class _EmergencyContactScreenState extends State<EmergencyContactScreen> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
                     border: Border.all(
-                      color: Colors.white,
+                      color: Colors.black,
                       width: 2,
                     ),
                   ),
@@ -118,7 +118,7 @@ class _EmergencyContactScreenState extends State<EmergencyContactScreen> {
                       keyboardType: TextInputType.number,
                       cursorColor: Colors.grey,
                       style: const TextStyle(
-                        color: Colors.white,
+                        color: Colors.black,
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                       ),
@@ -146,15 +146,15 @@ class _EmergencyContactScreenState extends State<EmergencyContactScreen> {
               const SizedBox(height: 20),
               const Divider(
                 height: 20,
-                color: Colors.grey,
+                color: Color.fromARGB(255, 65, 58, 58),
               ),
-              const SizedBox(height: 40),
+              const SizedBox(height: 30),
               const Text(
                 "Enter emergency numbers",
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w900,
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
               ),
               const SizedBox(height: 20),
@@ -166,7 +166,7 @@ class _EmergencyContactScreenState extends State<EmergencyContactScreen> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
                     border: Border.all(
-                      color: Colors.white,
+                      color: Colors.black,
                       width: 2,
                     ),
                   ),
@@ -176,7 +176,7 @@ class _EmergencyContactScreenState extends State<EmergencyContactScreen> {
                       keyboardType: TextInputType.number,
                       cursorColor: Colors.grey,
                       style: const TextStyle(
-                        color: Colors.white,
+                        color: Colors.black,
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                       ),
@@ -210,7 +210,7 @@ class _EmergencyContactScreenState extends State<EmergencyContactScreen> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
                     border: Border.all(
-                      color: Colors.white,
+                      color: Colors.black,
                       width: 2,
                     ),
                   ),
@@ -220,7 +220,7 @@ class _EmergencyContactScreenState extends State<EmergencyContactScreen> {
                       keyboardType: TextInputType.number,
                       cursorColor: Colors.grey,
                       style: const TextStyle(
-                        color: Colors.white,
+                        color: Colors.black,
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                       ),
@@ -254,7 +254,7 @@ class _EmergencyContactScreenState extends State<EmergencyContactScreen> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
                     border: Border.all(
-                      color: Colors.white,
+                      color: Colors.black,
                       width: 2,
                     ),
                   ),
@@ -264,7 +264,7 @@ class _EmergencyContactScreenState extends State<EmergencyContactScreen> {
                       keyboardType: TextInputType.number,
                       cursorColor: Colors.grey,
                       style: const TextStyle(
-                        color: Colors.white,
+                        color: Colors.black,
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                       ),
@@ -298,7 +298,7 @@ class _EmergencyContactScreenState extends State<EmergencyContactScreen> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
                     border: Border.all(
-                      color: Colors.white,
+                      color: Colors.black,
                       width: 2,
                     ),
                   ),
@@ -308,7 +308,7 @@ class _EmergencyContactScreenState extends State<EmergencyContactScreen> {
                       keyboardType: TextInputType.number,
                       cursorColor: Colors.grey,
                       style: const TextStyle(
-                        color: Colors.white,
+                        color: Colors.black,
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                       ),
@@ -342,7 +342,7 @@ class _EmergencyContactScreenState extends State<EmergencyContactScreen> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
                     border: Border.all(
-                      color: Colors.white,
+                      color: Colors.black,
                       width: 2,
                     ),
                   ),
@@ -352,7 +352,7 @@ class _EmergencyContactScreenState extends State<EmergencyContactScreen> {
                       keyboardType: TextInputType.number,
                       cursorColor: Colors.grey,
                       style: const TextStyle(
-                        color: Colors.white,
+                        color: Colors.black,
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                       ),
@@ -377,12 +377,23 @@ class _EmergencyContactScreenState extends State<EmergencyContactScreen> {
                   ),
                 ),
               ),
+              const SizedBox(height: 30),
               ElevatedButton(
                 onPressed: () {
                   // Call the storeData function when the button is pressed
                   storeData();
                 },
-                child: Text('Save Emergency Contacts'),
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.teal),
+                  shape: MaterialStateProperty.all(
+                    const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(20),
+                      ),
+                    ),
+                  ),
+                ),
+                child: const Text('Save Emergency Contacts'),
               ),
             ],
           ),
@@ -392,36 +403,33 @@ class _EmergencyContactScreenState extends State<EmergencyContactScreen> {
   }
 
   void storeData() async {
-  final primaryEmergencyNumber = primaryController.text.trim();
-  final emergencyNumbers = [
-    secondaryController1.text.trim(),
-    secondaryController2.text.trim(),
-    secondaryController3.text.trim(),
-    secondaryController4.text.trim(),
-    secondaryController5.text.trim(),
-  ];
+    final primaryEmergencyNumber = primaryController.text.trim();
+    final emergencyNumbers = [
+      secondaryController1.text.trim(),
+      secondaryController2.text.trim(),
+      secondaryController3.text.trim(),
+      secondaryController4.text.trim(),
+      secondaryController5.text.trim(),
+    ];
 
-  // ignore: unused_local_variable
-  EmergencyContactModel emergencyContactModel = EmergencyContactModel(
-    primaryEmergencyNumber: primaryEmergencyNumber,
-    emergencyNumbers: emergencyNumbers,
-  );
+    // ignore: unused_local_variable
+    EmergencyContactModel emergencyContactModel = EmergencyContactModel(
+      primaryEmergencyNumber: primaryEmergencyNumber,
+      emergencyNumbers: emergencyNumbers,
+    );
 
-  // Access Firestore instance
-  FirebaseFirestore firestore = FirebaseFirestore.instance;
+    // Access Firestore instance
+    FirebaseFirestore firestore = FirebaseFirestore.instance;
 
-  // Add the emergency contact data to Firestore
-  try {
-    await firestore
-        .collection('emergencyContacts')
-        .add({
-          'primaryEmergencyNumber': primaryEmergencyNumber,
-          'emergencyNumbers': emergencyNumbers,
-        });
-    // You can add error handling here if needed
-  } catch (e) {
-    print('Error storing emergency contact data: $e');
+    // Add the emergency contact data to Firestore
+    try {
+      await firestore.collection('emergencyContacts').add({
+        'primaryEmergencyNumber': primaryEmergencyNumber,
+        'emergencyNumbers': emergencyNumbers,
+      });
+      // You can add error handling here if needed
+    } catch (e) {
+      print('Error storing emergency contact data: $e');
+    }
   }
-}
-
 }

@@ -212,7 +212,7 @@ class _MapScreenState extends State<MapScreen> {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 80,
-        backgroundColor: Colors.black,
+        backgroundColor: const Color.fromARGB(255, 55, 143, 134),
         centerTitle: true,
         title: const Text(
           'Map',

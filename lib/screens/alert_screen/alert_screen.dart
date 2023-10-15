@@ -12,13 +12,13 @@ class _AlertScreenState extends State<AlertScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         centerTitle: true,
         title: const Text(
           'Alert',
           style: TextStyle(
-            color: Colors.black,
+            color: Colors.white,
             fontSize: 24,
             fontWeight: FontWeight.w800,
           ),
@@ -29,8 +29,8 @@ class _AlertScreenState extends State<AlertScreen> {
             bottomRight: Radius.circular(30),
           ),
         ),
-        toolbarHeight: 80,
-        backgroundColor: Colors.white,
+        toolbarHeight: 90,
+        backgroundColor: const Color.fromARGB(255, 55, 143, 134),
         elevation: 0.0,
         leading: IconButton(
           onPressed: () {
@@ -44,7 +44,7 @@ class _AlertScreenState extends State<AlertScreen> {
           },
           icon: const Icon(
             Icons.keyboard_arrow_left_rounded,
-            color: Colors.black,
+            color: Colors.white,
             size: 40,
           ),
         ),
@@ -60,7 +60,7 @@ class _AlertScreenState extends State<AlertScreen> {
             decoration: BoxDecoration(
               shape: BoxShape.rectangle,
               borderRadius: BorderRadius.circular(30),
-              color: Colors.white,
+              color: const Color.fromARGB(255, 0, 255, 234),
               boxShadow: const [
                 BoxShadow(
                   blurRadius: 2,
