@@ -23,4 +23,9 @@ Explore the "Tap Away" app and be a part of a community dedicated to saving live
 <img center width="250" src="https://github.com/Vaibhav-kesarwani/Disaster-Management-App/assets/116189379/030680f9-1c0b-425d-8ccb-35a9d6bcd148">
 </p>
 
-kubh ni wo that kuch tho
+This Flutter code represents the welcome screen of a mobile app, providing users with a choice to "Get started" or proceed to the registration screen if not already signed in. The screen is part of a larger app that uses the Provider package for state management. Key features of this code include:
+
+* A welcoming image and text encouraging users to start using the app.
+* An option to "Get started" or navigate to the registration screen, depending on the user's authentication status.
+* Utilizes Flutter's Material Design and Provider for state management.
+This code is part of a user authentication flow within a Flutter application. It offers an engaging entry point for users and seamless navigation to the main application when signed in.
