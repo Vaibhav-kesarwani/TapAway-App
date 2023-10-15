@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:uhack_app/screens/home_screen.dart';
+import 'package:uhack_app/screens/about_us_screen/about_us_screen.dart';
 import 'package:uhack_app/screens/user_authentication/provider/auth_provider.dart';
 
 void main() async {
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       ],
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: HomeScreen(),
+        home: AboutUsScreen(),
         title: "U_Hack_Application",
       ),
     );
