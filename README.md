@@ -27,5 +27,5 @@ This Flutter code represents the welcome screen of a mobile app, providing users
 
 * A welcoming image and text encouraging users to start using the app.
 * An option to "Get started" or navigate to the registration screen, depending on the user's authentication status.
-* Utilizes Flutter's Material Design and Provider for state management.
+* Utilizes Flutter's Material Design and Provider for state management.\
 This code is part of a user authentication flow within a Flutter application. It offers an engaging entry point for users and seamless navigation to the main application when signed in.
