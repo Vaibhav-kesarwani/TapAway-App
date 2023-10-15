@@ -8,13 +8,21 @@ import 'package:uhack_app/screens/user_authentication/provider/auth_provider.dar
 import 'package:uhack_app/screens/welcome_screen.dart';
 
 class CustomDrawer extends StatefulWidget {
-  const CustomDrawer({super.key});
+  const CustomDrawer({Key? key});
 
   @override
   State<CustomDrawer> createState() => _CustomDrawerState();
 }
 
 class _CustomDrawerState extends State<CustomDrawer> {
+  void navigateToScreen(Widget screen) {
+    Navigator.pushAndRemoveUntil(
+      context,
+      MaterialPageRoute(builder: (context) => screen),
+      (route) => false,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final ap = Provider.of<AuthProvider>(context, listen: false);
@@ -33,9 +41,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                 if (ap.isSignedIn && ap.userModel != null) ...[
                   CircleAvatar(
                     radius: 40,
-                    backgroundImage: NetworkImage(
-                      ap.userModel!.profilePic,
-                    ),
+                    backgroundImage: NetworkImage(ap.userModel!.profilePic),
                   ),
                   const SizedBox(height: 10),
                   Text(
@@ -60,55 +66,28 @@ class _CustomDrawerState extends State<CustomDrawer> {
             leading: const Icon(Icons.dashboard_outlined),
             title: const Text('Home'),
             onTap: () {
-              // Handle the Home action
-              Navigator.pushAndRemoveUntil(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const HomeScreen(),
-                ),
-                (route) => false,
-              );
+              navigateToScreen(const HomeScreen());
             },
           ),
           ListTile(
             leading: const Icon(Icons.location_on_sharp),
             title: const Text('Map'),
             onTap: () {
-              // Handle the Map action
-              Navigator.pushAndRemoveUntil(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const MapScreen(),
-                ),
-                (route) => false,
-              );
+              navigateToScreen(const MapScreen());
             },
           ),
           ListTile(
             leading: const Icon(Icons.settings),
             title: const Text('Settings'),
             onTap: () {
-              // Handle the Settings action
-              Navigator.pushAndRemoveUntil(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const SettingScreen(),
-                ),
-                (route) => false,
-              );
+              navigateToScreen(const SettingScreen());
             },
           ),
           ListTile(
             leading: const Icon(Icons.info),
             title: const Text('About Us'),
             onTap: () {
-              Navigator.pushAndRemoveUntil(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const AboutUsScreen(),
-                ),
-                (route) => false,
-              );
+              navigateToScreen(const AboutUsScreen());
             },
           ),
           const Divider(),
@@ -116,16 +95,9 @@ class _CustomDrawerState extends State<CustomDrawer> {
             leading: const Icon(Icons.exit_to_app),
             title: const Text('Log Out'),
             onTap: () {
-              // Handle the Log Out action
-              ap.userSignOut().then(
-                    (value) => Navigator.pushAndRemoveUntil(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const WelcomeScreen(),
-                      ),
-                      (route) => false,
-                    ),
-                  );
+              ap.userSignOut().then((value) {
+                navigateToScreen(const WelcomeScreen());
+              });
             },
           ),
         ],

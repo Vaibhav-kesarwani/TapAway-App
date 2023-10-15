@@ -13,10 +13,29 @@ class WelcomeScreen extends StatefulWidget {
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
+  void navigateToHomeScreen(BuildContext context) async {
+    final ap = Provider.of<AuthProvider>(context, listen: false);
+    await ap.getDataFromSP().whenComplete(
+      () => Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const HomeScreen(),
+        ),
+      ),
+    );
+  }
+
+  void navigateToRegisterScreen(BuildContext context) {
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const RegisterScreen(),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    final ap = Provider.of<AuthProvider>(context, listen: false);
-
     return Scaffold(
       body: SafeArea(
         child: Center(
@@ -53,22 +72,11 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   child: CustomButton(
                     text: "Get started",
                     onPressed: () async {
+                      final ap = Provider.of<AuthProvider>(context, listen: false);
                       if (ap.isSignedIn == true) {
-                        await ap.getDataFromSP().whenComplete(
-                              () => Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const HomeScreen(),
-                                ),
-                              ),
-                            );
+                        navigateToHomeScreen(context);
                       } else {
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const RegisterScreen(),
-                          ),
-                        );
+                        navigateToRegisterScreen(context);
                       }
                     },
                   ),
