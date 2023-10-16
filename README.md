@@ -69,5 +69,5 @@ This code is part of a user authentication flow within a Flutter application. It
 <p align="center">
 <img center width="250" src="https://github.com/Vaibhav-kesarwani/Disaster-Management-App/assets/116189379/d17cd31b-d6b5-4b9c-9e95-c89831ca4bb7">
 <img center width="250" src="https://github.com/Vaibhav-kesarwani/Disaster-Management-App/assets/116189379/d4e8c004-6d34-4809-a3a9-8853227331cb">
-<img center width="250" src="https://github.com/Vaibhav-kesarwani/Disaster-Management-App/assets/116189379/d41c7a3e-69b7-4ebc-af5d-e4230fa74972">
+<img center width="250" src="https://github.com/Vaibhav-kesarwani/Disaster-Management-App/assets/116189379/0cf6e0a2-a05d-461c-a41c-14ec49ee08b2">
 </p>
