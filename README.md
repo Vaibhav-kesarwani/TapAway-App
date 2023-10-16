@@ -103,13 +103,13 @@ Before you begin, ensure you have met the following requirements:
 
 2. **Change your current directory** to the project folder:
 
-   bash
+   ```bash
    cd your-flutter-project
    
 
 3. **Install the project dependencies**:
 
-   bash
+   ```bash
    flutter pub get
    
 
@@ -119,19 +119,19 @@ Now that you've set up the project locally, you can run it on an emulator or phy
 
 - To run the project on an **Android emulator**:
 
-   bash
+   ```bash
    flutter run
    
 
 - To run the project on an **iOS simulator**:
 
-   bash
+   ```bash
    flutter run
    
 
 - To run the project on a connected **physical device**, make sure it's connected via USB or over Wi-Fi, and then run:
 
-   bash
+   ```bash
    flutter run
    
 
@@ -141,8 +141,8 @@ The app should start on your selected device, and you can see the changes live a
 
 To build a release version of the app, use the following command:
 
-bash
-flutter build apk
+   ```bash
+   flutter build apk
 
 
 This will generate an APK file that you can distribute or install on Android devices.
