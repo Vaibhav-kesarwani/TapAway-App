@@ -37,3 +37,24 @@ This code is part of a user authentication flow within a Flutter application. It
 <img width="250" src="https://github.com/Vaibhav-kesarwani/Disaster-Management-App/assets/116189379/17304572-34dd-43e4-8667-dd7b59630bae">
 <img width="250" src="https://github.com/Vaibhav-kesarwani/Disaster-Management-App/assets/116189379/bc172c7b-50bf-4efa-91ab-5db4432a1470">
 </p>
+
+### OtpScreen:
+
+* This screen is used for OTP (One-Time Password) verification during the user authentication process.
+* It displays a circular logo image, a verification title, and a message asking the user to enter the OTP sent to their phone number.
+* Users enter the OTP using a custom widget Pinput that allows them to input a 6-digit code.
+* There's a "Verify" button to submit the OTP for verification.
+
+### RegisterScreen:
+
+* This screen is for user registration where users are required to input their phone numbers.
+* It displays a circular logo image, a registration title, and a message informing users that they will receive a verification code on their phone.
+* Users can input their phone number, and they can select their country code using the CountryPicker widget.
+* Upon entering the phone number, there's a "Login" button to initiate the authentication process.
+
+### UserInformationScreen:
+
+* This screen collects additional user information after successful authentication.
+* Users can select a profile picture by tapping on an avatar or continue without one.
+* Users provide their name, email, and a short bio in text fields.
+
