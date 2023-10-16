@@ -30,8 +30,10 @@ This Flutter code represents the welcome screen of a mobile app, providing users
 * Utilizes Flutter's Material Design and Provider for state management.\
 This code is part of a user authentication flow within a Flutter application. It offers an engaging entry point for users and seamless navigation to the main application when signed in.
 
-## Register and OTP Authentication Screen 
+## Register, OTP Authentication Screen and User Information 
 
 <p align="center">
-<img center width="250" src="https://github.com/Vaibhav-kesarwani/My-Faviourat-image/blob/main/image.jpeg">
+<img width="250" src="https://github.com/Vaibhav-kesarwani/Disaster-Management-App/assets/116189379/e8e56391-074f-4954-819a-c829935e39b2">
+<img width="250" src="https://github.com/Vaibhav-kesarwani/Disaster-Management-App/assets/116189379/17304572-34dd-43e4-8667-dd7b59630bae">
+<img width="250" src="https://github.com/Vaibhav-kesarwani/Disaster-Management-App/assets/116189379/bc172c7b-50bf-4efa-91ab-5db4432a1470">
 </p>
