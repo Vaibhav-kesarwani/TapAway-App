@@ -58,3 +58,8 @@ This code is part of a user authentication flow within a Flutter application. It
 * Users can select a profile picture by tapping on an avatar or continue without one.
 * Users provide their name, email, and a short bio in text fields.
 
+## HomeScreen
+<p align="center">
+<img center width="250" src="https://github.com/Vaibhav-kesarwani/Disaster-Management-App/assets/116189379/99c739fe-b107-4869-94f9-884ac14f0f14">
+</p>
+
