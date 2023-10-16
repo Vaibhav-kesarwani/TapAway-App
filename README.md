@@ -97,7 +97,7 @@ Before you begin, ensure you have met the following requirements:
 
 1. **Clone the repository** to your local machine:
 
-   bash
+   ```bash
    git clone https://github.com/Vaibhav-kesarwani/Disaster-Management-App.git
    
 
