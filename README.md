@@ -59,7 +59,10 @@ This code is part of a user authentication flow within a Flutter application. It
 * Users provide their name, email, and a short bio in text fields.
 
 ## HomeScreen
+
 <p align="center">
 <img center width="250" src="https://github.com/Vaibhav-kesarwani/Disaster-Management-App/assets/116189379/99c739fe-b107-4869-94f9-884ac14f0f14">
+<img center width="250" src="https://github.com/Vaibhav-kesarwani/Disaster-Management-App/assets/116189379/402df0b6-7c01-49c5-a54e-2712312dcca6">
+<img center width="250" src="https://github.com/Vaibhav-kesarwani/Disaster-Management-App/assets/116189379/d41c7a3e-69b7-4ebc-af5d-e4230fa74972">
 </p>
 
