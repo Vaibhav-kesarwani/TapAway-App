@@ -137,16 +137,6 @@ Now that you've set up the project locally, you can run it on an emulator or phy
 
 The app should start on your selected device, and you can see the changes live as you make modifications to the code.
 
-## Building the Project
-
-To build a release version of the app, use the following command:
-
-   ``bash
-   flutter build apk
-
-
-This will generate an APK file that you can distribute or install on Android devices.
-
 ## Contact
 
 If you have any questions or need further assistance, please contact:
