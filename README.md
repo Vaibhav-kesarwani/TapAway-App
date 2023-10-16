@@ -141,7 +141,7 @@ The app should start on your selected device, and you can see the changes live a
 
 To build a release version of the app, use the following command:
 
-   ```bash
+   ``bash
    flutter build apk
 
 
