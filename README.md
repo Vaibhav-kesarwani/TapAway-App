@@ -79,7 +79,7 @@ This Flutter code represents the welcome screen of a mobile app, providing users
 <img width="250" src="https://github.com/Vaibhav-kesarwani/Disaster-Management-App/assets/116189379/3fee1c39-cced-4e1f-97d9-fccbdc8f8e98">
 </p>
 
-Hello everyone! I am the developer behind this application. I have always wondered on what to do in such situation as i have experienced one personally. I have always felt the need to do something for such people, that is why i have created this app which is known as "TapAway". People like you and me can use this app and save yourself and others with just a tap.
+Hello everyone! I am the developer behind this application. I have always wondered on what to do in such situation as i have experienced one personally. I have always felt the need to do something for such people, that is why i have created this app which is known as "TapAway". People like you and me can use this app and save yourself and others with just a tap..
 
 ## How to setup project locally
 
