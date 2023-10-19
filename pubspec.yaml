@@ -60,10 +60,15 @@ dependencies:
   flutter_compass: ^0.8.0
   flutter_tts: ^3.8.3
   lottie: ^2.6.0
+  flutter_native_splash: ^2.3.4
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+flutter_native_splash:
+  image: assets/logo.png
+  color: "#f9f9f9"
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
