@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:uhack_app/screens/home_screen.dart';
+import 'package:uhack_app/screens/wether_screen/model/weather_model.dart';
+import 'package:uhack_app/screens/wether_screen/services/weather_services.dart';
 
 class WeatherScreen extends StatefulWidget {
   const WeatherScreen({super.key});
@@ -9,6 +11,35 @@ class WeatherScreen extends StatefulWidget {
 }
 
 class _WeatherScreenState extends State<WeatherScreen> {
+  //api key
+  final _weatherServices = WeatherService('610b4e5b67eda6b783bee1ee70910fe3');
+  Weather? _weather;
+
+  //fetch weather
+  _fetchWeather() async {
+    String cityName = await _weatherServices.getCurrentCity();
+
+    //get weather for city
+    try {
+      final weather = await _weatherServices.getWeather(cityName);
+      setState(() {
+        _weather = weather;
+      });
+    }
+
+    //any error
+    catch (e) {
+      print(e);
+    }
+  }
+
+  //init state
+  @override
+  void initState() {
+    super.initState();
+    _fetchWeather();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,6 +78,18 @@ class _WeatherScreenState extends State<WeatherScreen> {
             color: Colors.white,
             size: 40,
           ),
+        ),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            // city name
+            Text(_weather?.cityName ?? "loading city..."),
+
+            // temperature
+            Text("${_weather?.temperature.round()}C"),
+          ],
         ),
       ),
     );

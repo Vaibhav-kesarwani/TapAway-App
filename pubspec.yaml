@@ -59,6 +59,7 @@ dependencies:
   google_maps_flutter: ^2.5.0
   flutter_compass: ^0.8.0
   flutter_tts: ^3.8.3
+  lottie: ^2.6.0
 
 dev_dependencies:
   flutter_test:

@@ -2,7 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:uhack_app/screens/user_authentication/provider/auth_provider.dart';
-import 'package:uhack_app/screens/welcome_screen.dart';
+import 'package:uhack_app/screens/wether_screen/weather_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       ],
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: WelcomeScreen(),
+        home: WeatherScreen(),
         title: "U_Hack_Application",
       ),
     );
