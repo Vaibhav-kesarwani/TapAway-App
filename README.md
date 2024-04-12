@@ -61,17 +61,14 @@ This Flutter code represents the welcome screen of a mobile app, providing users
 
 ## HomeScreen
 
-<p align="center">
+<p>
 <img center width="250" src="https://github.com/Vaibhav-kesarwani/Disaster-Management-App/assets/116189379/99c739fe-b107-4869-94f9-884ac14f0f14">
 <img center width="250" src="https://github.com/Vaibhav-kesarwani/Disaster-Management-App/assets/116189379/402df0b6-7c01-49c5-a54e-2712312dcca6">
 <img center width="250" src="https://github.com/Vaibhav-kesarwani/Disaster-Management-App/assets/116189379/d41c7a3e-69b7-4ebc-af5d-e4230fa74972">
 </p>
 
-<p align="center">
-<img center width="250" src="https://github.com/Vaibhav-kesarwani/Disaster-Management-App/assets/116189379/d17cd31b-d6b5-4b9c-9e95-c89831ca4bb7">
-<img center width="250" src="https://github.com/Vaibhav-kesarwani/Disaster-Management-App/assets/116189379/d4e8c004-6d34-4809-a3a9-8853227331cb">
-<img center width="250" src="https://github.com/Vaibhav-kesarwani/Disaster-Management-App/assets/116189379/0cf6e0a2-a05d-461c-a41c-14ec49ee08b2">
-</p>
+
+![Screenshot from 2024-04-12 17-21-46](https://github.com/Vaibhav-kesarwani/TapAway-App/assets/116189379/26bc63a4-032a-49bb-acb1-8e770d65d51e)
 
 ## About Developer
 
